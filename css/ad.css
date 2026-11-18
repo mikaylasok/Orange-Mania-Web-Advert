@@ -1,0 +1,112 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src:url(../fonts/roboto.woff) format('woff');
+}
+
+
+.frame {
+	position: relative;
+	width: 970px;
+	height: 250px;
+	border: solid 1px gray;
+	overflow: hidden;
+}
+
+.background {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url("../images/yummy.jpg") no-repeat;
+	background-size: cover;
+	transition: opacity 0.4s ease;
+
+}
+
+.orange,
+.evilorange {
+	position: absolute;
+
+	top: 30px;
+	left: 60px;
+
+	width: 200px;
+	height: 200px;
+
+	background-size: contain;
+	transition: opacity 0.3s ease;
+}
+
+.orange {
+	opacity: 35%;
+	background: url("../images/yes.png") no-repeat;
+	z-index: 3;
+	cursor: pointer;
+}
+
+/* New image in the exact same position */
+.evilorange {
+	background: url("../images/boi.png") no-repeat; 
+	opacity: 0;
+	z-index: 4;
+}
+
+.new_text {
+	position: absolute;
+	font-family: 'Roboto';
+	font-size: 40px;
+	color: darkolivegreen;
+	width: 800px;
+	letter-spacing: 0.1px;
+	line-height: 90px;
+	left: 280px;
+	top: 80px;
+	opacity: 0%;
+	transition: opacity 0.3s ease;
+}
+
+.text {
+	position: absolute;
+	font-family: 'Roboto';
+	font-size: 60px;
+	color: wheat;
+	text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+	width: 800px;
+	letter-spacing: 0.1px;
+	line-height: 24px;
+	left: 410px;
+	top: 200px;
+}
+
+
+.orange:hover {
+	opacity: 1;
+	background: url("../images/boi.png") no-repeat;
+}
+
+.orange:hover ~ .evilorange {
+	opacity: 1;
+}
+
+.orange:hover ~ .background {
+	opacity: 0;
+	background: solid black;
+	backrgound-size: cover;
+	background-color: #000;
+}
+
+.orange:hover ~ .new_text {
+	opacity: 1;
+}
+
+.orange:hover ~ .text {
+	opacity: 0;
+}
